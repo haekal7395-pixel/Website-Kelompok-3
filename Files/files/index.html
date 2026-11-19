@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Masjid di Salatiga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap"rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1>Cari masjid terdekat di Kota Salatiga</h1>
+            <p>
+              Dari masjid bersejarah di Kauman sampai masjid persinggahan di
+              jalur Solo–Semarang. Lihat alamat, jam buka, dan langsung buka
+              rutenya di peta.
+            </p>
+            <div class="stats">
+              <div><b id="stTotal">0</b><span>Total Masjid</span></div>
+              <div><b id="stKec">3</b><span>kecamatan</span></div>
+              <div><b id="st24">0</b><span>buka 24 jam</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="panel" aria-label="Pencarian masjid">
+        <label class="search">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-3.5-3.5" />
+          </svg>
+          <input
+            id="q"
+            type="search"
+            placeholder="Cari nama masjid, jalan, atau kelurahan"
+            autocomplete="off"
+            aria-label="Cari masjid"
+          />
+        </label>
+        <div
+          class="chips"
+          id="chips"
+          role="group"
+          aria-label="Filter kecamatan"
+        ></div>
+      </section>
+
+      <div class="result-bar">
+        <h2>Daftar masjid</h2>
+        <p id="count" aria-live="polite"></p>
+      </div>
+
+      <section class="grid" id="grid"></section>
+    </main>
+    
+    <dialog id="dlg" aria-labelledby="dTitle">
+      <div class="d-top">
+        <div class="art d-art" id="dArt">
+          <svg viewBox="0 0 120 90"><use href="#masjid"/></svg>
+        </div>
+        <button class="x" id="dClose" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="d-body">
+        <h3 id="dTitle"></h3>
+        <p id="dNote"></p>
+        <ul class="d-list" id="dList"></ul>
+        <div class="d-act">
+          <a class="btn" id="dMap" target="_blank" rel="noopener"
+            >Buka di Google Maps</a
+          >
+          <button class="btn alt" id="dCopy">Salin alamat</button>
+        </div>
+      </div>
+    </dialog>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
